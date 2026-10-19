@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Maykon Tours | קבוצת הדילים השקטה</title>
+  <meta name="description" content="הדילים הכי שווים לחו״ל, ישר לוואטסאפ. דיל אחד ביום, הצטרפות חינם.">
+  <meta name="theme-color" content="#fdfaf4">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maykon Tours | קבוצת הדילים השקטה">
+  <meta property="og:description" content="דיל אחד ביום, ישר לוואטסאפ. הצטרפות חינם.">
+  <!-- IMAGE: תמונת שיתוף בוואטסאפ ופייסבוק (מומלץ 1200x630) -->
+  <meta property="og:image" content="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/logo/logo.png">
+  <link rel="icon" href="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/logo/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- PASTE META PIXEL HERE -->
+
+  <!-- END META PIXEL -->
+
+  <style>
+    :root{
+      --bg:#fdfaf4;
+      --navy:#0b2540;
+      --ink:#16263a;
+      --muted:#536173;
+      --line:#e8e1d3;
+      --teal:#0c9c9a;
+      --gold:#ffc94d;
+      --cta:#ff6a3d;
+      --cta-2:#ff8f4f;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:calc(16px * var(--scale,1));-webkit-text-size-adjust:100%}
+    body{overflow-x:clip;font-family:'Heebo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    .ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+    .wrap{width:100%;max-width:480px;margin:0 auto;padding:0 20px}
+
+    /* תמונה עליונה */
+    .hero{position:relative;height:clamp(230px,42svh,420px);isolation:isolate;overflow:hidden}
+    .hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;animation:drift 16s ease-out forwards;transform:scale(1.06)}
+    @keyframes drift{to{transform:scale(1)}}
+    .hero::after{content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(180deg,rgba(11,37,64,.32) 0%,rgba(11,37,64,0) 26%,rgba(253,250,244,0) 52%,rgba(253,250,244,.75) 80%,var(--bg) 100%)}
+    .brand{display:flex;align-items:center;gap:10px;padding-top:calc(16px + env(safe-area-inset-top));color:#fff;font-weight:700;font-size:.95rem;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+    .brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(255,255,255,.85),0 6px 16px rgba(0,0,0,.25)}
+
+    /* פתיח */
+    .intro{position:relative;margin-top:-58px}
+    .live{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:500;color:var(--muted);
+      padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(11,37,64,.08)}
+    .live i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.55);animation:ping 2.2s infinite}
+    @keyframes ping{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+    .live b{color:var(--navy);font-weight:700}
+
+    h1{font-size:clamp(2.15rem,9.4vw,2.8rem);line-height:1.08;font-weight:900;letter-spacing:-.5px;color:var(--navy);margin:14px 0 12px}
+    h1>span{display:block;white-space:nowrap}
+    h1 .free{display:table;color:var(--navy);background:var(--gold);padding:0 .22em .04em;border-radius:.18em;margin-top:.14em;transform:rotate(-1.5deg);box-shadow:0 8px 18px -8px rgba(255,170,30,.8)}
+    .sub{font-size:1.02rem;color:var(--muted);max-width:36ch}
+
+    /* איך זה עובד */
+    .how{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 16px}
+    .how li{display:flex;flex-direction:column;gap:6px;font-size:.9rem;font-weight:500;line-height:1.3;color:var(--ink);
+      background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 10px 11px}
+    .how b{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:900;color:#fff;background:var(--teal)}
+
+    /* כפתור */
+    .cta{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;
+      text-decoration:none;color:#fff;border-radius:18px;padding:14px 18px;
+      background:linear-gradient(180deg,var(--cta-2),var(--cta));
+      box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 14px 28px -10px rgba(255,106,61,.75);
+      transition:transform .12s ease,box-shadow .12s ease;-webkit-tap-highlight-color:transparent}
+    .cta:active{transform:translateY(1px) scale(.985)}
+    .cta:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+    .cta svg{width:30px;height:30px;flex:none}
+    .cta span{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
+    .cta strong{font-size:clamp(1rem,4.6vw,1.16rem);font-weight:900;white-space:nowrap}
+    .cta small{font-size:.8rem;font-weight:500;opacity:.95}
+    .cta--ring::before{content:"";position:absolute;inset:-4px;border-radius:22px;border:2px solid rgba(255,120,70,.55);opacity:0;animation:ring 2.8s ease-out 1.5s infinite}
+    @keyframes ring{0%{opacity:.9;transform:scale(.98)}100%{opacity:0;transform:scale(1.06)}}
+    .proof{display:flex;justify-content:center;gap:14px;margin-top:12px;font-size:.82rem;color:var(--muted)}
+    .proof span+span::before{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;background:currentColor;vertical-align:middle;margin-inline-end:14px}
+
+    /* דילים */
+    .deals{padding-top:34px;padding-bottom:26px}
+    .deals__head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px}
+    .deals__head h2{font-size:1.35rem;font-weight:900;color:var(--navy)}
+    .deals__head span{font-size:.82rem;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .deal{position:relative;display:block;aspect-ratio:4/5;border-radius:18px;overflow:hidden;text-decoration:none;color:#fff;background:#cfdde6;
+      box-shadow:0 10px 22px -12px rgba(11,37,64,.45);-webkit-tap-highlight-color:transparent;
+      opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+    .deal.show{opacity:1;transform:none}
+    .deal--wide{grid-column:1 / -1;aspect-ratio:16/8}
+    .deal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .deal:hover img,.deal:active img{transform:scale(1.05)}
+    .deal::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(7,22,40,.78) 100%)}
+    .deal__txt{position:absolute;inset-inline:12px;bottom:12px;z-index:1;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+    .deal__name{font-size:1.06rem;font-weight:900;line-height:1.15;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+    .deal__price{display:inline-flex;align-items:baseline;gap:4px;background:#fff;color:var(--navy);border-radius:999px;padding:3px 10px;font-size:.74rem;font-weight:500}
+    .deal__price b{font-size:.98rem;font-weight:900}
+    .fine{margin-top:12px;text-align:center;font-size:.76rem;color:var(--muted)}
+
+    /* כפתור דביק */
+    .sticky{position:fixed;inset-inline:0;bottom:0;z-index:50;padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+      background:linear-gradient(0deg,var(--bg) 62%,rgba(253,250,244,0));transform:translateY(120%);transition:transform .3s ease}
+    .sticky.show{transform:none}
+    .sticky .cta{max-width:452px;margin:0 auto}
+
+    /* פוטר */
+    footer{border-top:1px solid var(--line);padding:16px 0 calc(100px + env(safe-area-inset-bottom));font-size:.76rem;color:var(--muted)}
+    footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px}
+    footer button{background:none;border:0;font:inherit;color:var(--muted);cursor:pointer;padding:4px 0}
+    footer button:hover,footer button:focus-visible{color:var(--navy);text-decoration:underline;text-underline-offset:3px;outline:none}
+
+    /* כניסה */
+    .in{opacity:0;transform:translateY(12px);animation:in .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
+    @keyframes in{to{opacity:1;transform:none}}
+
+    /* חלונות */
+    .modal{position:fixed;inset:0;z-index:100;display:none;align-items:flex-end;justify-content:center;background:rgba(11,37,64,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+    .modal.open{display:flex}
+    .modal__box{background:#fff;width:100%;max-width:520px;max-height:86svh;border-radius:22px 22px 0 0;display:flex;flex-direction:column;animation:up .28s cubic-bezier(.2,.7,.2,1)}
+    @keyframes up{from{transform:translateY(30px);opacity:.6}to{transform:none;opacity:1}}
+    .modal__head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #eceef2}
+    .modal__head h2{font-size:1.15rem;font-weight:900;color:var(--navy)}
+    .modal__close{width:36px;height:36px;border-radius:50%;border:0;background:#f1f3f6;font-size:1.3rem;line-height:1;cursor:pointer;color:var(--navy)}
+    .modal__body{overflow-y:auto;padding:14px 20px 28px;font-size:.92rem;line-height:1.65;color:#3a4252}
+    .modal__body h3{font-size:.98rem;color:var(--navy);margin:16px 0 2px}
+    .modal__body ul{padding-inline-start:18px}
+    .modal__body a{color:#0b5cad}
+    .tools{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+    .tools button{border:1px solid #e1e4ea;background:#f7f8fa;border-radius:10px;padding:7px 12px;font:inherit;font-weight:700;color:var(--navy);cursor:pointer}
+    @media (min-width:560px){.modal{align-items:center}.modal__box{border-radius:22px}}
+
+    body.hc{filter:grayscale(1) contrast(1.3)}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.in,.deal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- IMAGE: תמונת רקע עליונה. מומלץ תמונה בהירה, לפחות 1080 פיקסל רוחב -->
+  <img class="hero__img" src="https://images.pexels.com/photos/27638882/pexels-photo-27638882.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="" fetchpriority="high">
+  <div class="wrap brand in d1">
+    <!-- IMAGE: לוגו -->
+    <img src="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/logo/logo.webp" alt="" width="42" height="42">
+    <span>Maykon Tours</span>
+  </div>
+</header>
+
+<main>
+  <section class="wrap intro">
+    <span class="live in d1"><i aria-hidden="true"></i>קהילה של <b class="ltr">4,500+</b> לקוחות</span>
+
+    <h1 class="in d2"><span>הדילים הכי שווים</span><span>ישר לוואטסאפ.</span><span class="free">בחינם.</span></h1>
+
+    <p class="sub in d3">ראש שקט, מחירים שקשה לנצח והמגוון הכי רחב של דילים לחו״ל בישראל. פעם ביום עולה לקבוצה הדיל הכי שווה שמצאנו, ורק אנחנו מפרסמים בה.</p>
+
+    <ol class="how in d4" aria-label="איך זה עובד">
+      <li><b>1</b>מצטרפים בלחיצה אחת</li>
+      <li><b>2</b>מקבלים דיל אחד ביום</li>
+      <li><b>3</b>סוגרים איתנו בפרטי</li>
+    </ol>
+
+    <div class="in d5">
+      <a href="#" class="cta cta--ring" data-join="main" id="mainCta">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-1.98 1.37-.51.05-1 .24-3.36-.7-2.840-1.12-4.65-4.03-4.79-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.56-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.85 2.08.92 2.23.08.15.12.33.02.52-.1.2-.15.32-.3.49-.15.17-.31.39-.45.52-.15.15-.3.31-.13.6.17.3.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.17-.2.74-.87.94-1.17.2-.3.39-.25.66-.15.27.1 1.72.81 2.02.96.3.15.49.22.57.34.07.13.07.72-.18 1.41Z"/></svg>
+        <span><strong>הצטרפו לקבוצה השקטה עכשיו</strong><small>ההצטרפות חינם, בלי שום התחייבות</small></span>
+      </a>
+      <div class="proof"><span>בלי ספאם</span><span>יוצאים מתי שרוצים</span></div>
+    </div>
+  </section>
+
+  <section class="wrap deals" aria-labelledby="deals-title">
+    <div class="deals__head"><h2 id="deals-title">דילים שעלו לקבוצה</h2><span>לדוגמה</span></div>
+
+    <div class="grid">
+      <!-- IMAGE: כל כרטיס דיל. להחלפת תמונה משנים את src, להחלפת מחיר משנים את המספר -->
+      <a href="#" class="deal" data-join="deal-thailand">
+        <img src="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/destinations/thailand.webp" alt="חוף טרופי בתאילנד" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">תאילנד</span><span class="deal__price">החל מ־<b class="ltr">₪6,000</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-japan">
+        <img src="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/destinations/japan.webp" alt="נוף עירוני ביפן" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">יפן</span><span class="deal__price">החל מ־<b class="ltr">₪6,990</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-seychelles">
+        <img src="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/destinations/seychelles.webp" alt="חוף עם סלעי גרניט בסיישל" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">סיישל</span><span class="deal__price">החל מ־<b class="ltr">₪6,500</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-zanzibar">
+        <img src="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/destinations/zanzibar.webp" alt="לגונה בצבע טורקיז בזנזיבר" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">זנזיבר</span><span class="deal__price">החל מ־<b class="ltr">₪5,500</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-budapest">
+        <img src="https://maykontours-eldar.github.io/Maykon-Landing-Page/assets/destinations/budapest.webp" alt="הדנובה וארמון בודה בבודפשט" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">בודפשט</span><span class="deal__price">החל מ־<b class="ltr">₪1,799</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-greece">
+        <img src="https://images.pexels.com/photos/6306940/pexels-photo-6306940.jpeg?auto=compress&cs=tinysrgb&w=600" alt="כיפות כחולות בסנטוריני" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">איי יוון</span><span class="deal__price">החל מ־<b class="ltr">₪1,550</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-italy-lakes">
+        <img src="https://images.pexels.com/photos/17386652/pexels-photo-17386652.jpeg?auto=compress&cs=tinysrgb&w=600" alt="וארנה על אגם קומו" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">טיול אגמים באיטליה</span><span class="deal__price">החל מ־<b class="ltr">₪3,500</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-montenegro">
+        <img src="https://images.pexels.com/photos/28377992/pexels-photo-28377992.jpeg?auto=compress&cs=tinysrgb&w=600" alt="מפרץ קוטור במונטנגרו" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">מונטנגרו</span><span class="deal__price">החל מ־<b class="ltr">₪1,990</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-prague">
+        <img src="https://images.pexels.com/photos/4615060/pexels-photo-4615060.jpeg?auto=compress&cs=tinysrgb&w=600" alt="טירת פראג בשקיעה" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">פראג</span><span class="deal__price">החל מ־<b class="ltr">₪1,990</b></span></span>
+      </a>
+      <a href="#" class="deal" data-join="deal-sports-shows">
+        <img src="https://images.pexels.com/photos/36675302/pexels-photo-36675302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="חבילות ספורט והופעות" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">חבילות ספורט והופעות</span><span class="deal__price">החל מ־<b class="ltr">₪2,750</b></span></span>
+      </a>
+      <a href="#" class="deal deal--wide" data-join="deal-cruises">
+        <img src="https://images.pexels.com/photos/945177/pexels-photo-945177.jpeg?auto=compress&cs=tinysrgb&w=900" alt="ספינת קרוז בים" loading="lazy">
+        <span class="deal__txt"><span class="deal__name">חבילות קרוזים</span><span class="deal__price">החל מ־<b class="ltr">$1,500</b></span></span>
+      </a>
+    </div>
+    <p class="fine">המחירים לאדם, לדוגמה בלבד, ומשתנים לפי תאריכים וזמינות. הפרטים המלאים בקבוצה.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <button type="button" data-modal="terms">תקנון האתר</button>
+    <button type="button" data-modal="privacy">מדיניות פרטיות</button>
+    <button type="button" data-modal="a11y">הצהרת נגישות</button>
+    <span>© <span class="ltr" id="year">2026</span> Maykon Tours</span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a href="#" class="cta" data-join="sticky" tabindex="-1">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-1.98 1.37-.51.05-1 .24-3.36-.7-2.84-1.12-4.65-4.03-4.79-4.22-.14-.19-1.14-1.52-1.14-2.9s.72-2.06.98-2.34c.25-.28.56-.35.74-.35l.53.01c.17.01.4-.06.62.48.25.6.85 2.08.92 2.23.08.15.12.33.02.52-.1.2-.15.32-.3.49-.15.17-.31.39-.45.52-.15.15-.3.31-.13.6.17.3.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.17-.2.74-.87.94-1.17.2-.3.39-.25.66-.15.27.1 1.72.81 2.02.96.3.15.49.22.57.34.07.13.07.72-.18 1.41Z"/></svg>
+    <span><strong>הצטרפו לקבוצה השקטה עכשיו</strong><small>ההצטרפות חינם, בלי שום התחייבות</small></span>
+  </a>
+</div>
+
+<!-- תקנון -->
+<div class="modal" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="t-terms">
+  <div class="modal__box">
+    <div class="modal__head"><h2 id="t-terms">תקנון האתר</h2><button class="modal__close" type="button" aria-label="סגירה">×</button></div>
+    <div class="modal__body">
+      <h3>כללי</h3>
+      <p>האתר מופעל על ידי Maykon Tours, סוכנות נסיעות בוטיק בבעלות אלדר מייקון (להלן: "העסק"). השימוש באתר מהווה הסכמה לתנאי תקנון זה. התקנון מנוסח בלשון רבים ופונה לכל המגדרים.</p>
+      <h3>השירות</h3>
+      <p>האתר מאפשר הצטרפות לקבוצת ווטסאפ שבה העסק מפרסם דילים והצעות לחופשות. ההצטרפות חינם ואינה מחייבת רכישה.</p>
+      <h3>מחירים וזמינות</h3>
+      <p>המחירים המוצגים באתר ובקבוצה הם לאדם, לדוגמה בלבד, ונכונים למועד הפרסום. המחירים משתנים לפי תאריכים, תפוסה ושערי מטבע. המחיר הסופי נקבע רק בעת ביצוע הזמנה בפועל, בכפוף לזמינות אצל הספקים.</p>
+      <h3>אחריות</h3>
+      <p>העסק פועל כסוכן ומתווך בין הלקוח לבין ספקי שירותי התיירות, כגון חברות תעופה, בתי מלון, חברות השכרת רכב וחברות קרוזים. האחריות לאספקת השירות חלה על הספק בהתאם לתנאיו, והעסק מלווה את הלקוח מול הספקים לאורך החופשה.</p>
+      <h3>ביטולים ושינויים</h3>
+      <p>ביטול או שינוי הזמנה כפופים לתנאי הספק ולהוראות חוק הגנת הצרכן, התשמ״א-1981 ותקנותיו. דמי ביטול, ככל שיחולו, יימסרו ללקוח לפני ביצוע ההזמנה.</p>
+      <h3>קבוצת הווטסאפ</h3>
+      <p>ההצטרפות לקבוצה היא מרצון וניתן לצאת ממנה בכל עת. השימוש בוואטסאפ כפוף לתנאי השימוש של WhatsApp. העסק רשאי להסיר משתתפים מהקבוצה לפי שיקול דעתו.</p>
+      <h3>קניין רוחני</h3>
+      <p>התכנים באתר, לרבות טקסטים, עיצוב ולוגו, שייכים לעסק או לבעלי הזכויות בהם, ואין להעתיקם ללא אישור בכתב.</p>
+      <h3>דין וסמכות שיפוט</h3>
+      <p>על תקנון זה יחולו דיני מדינת ישראל.</p>
+      <h3>יצירת קשר</h3>
+      <p>טלפון ווטסאפ: <a href="tel:+972528786250" class="ltr">052-878-6250</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- פרטיות -->
+<div class="modal" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="t-privacy">
+  <div class="modal__box">
+    <div class="modal__head"><h2 id="t-privacy">מדיניות פרטיות</h2><button class="modal__close" type="button" aria-label="סגירה">×</button></div>
+    <div class="modal__body">
+      <h3>איזה מידע נאסף</h3>
+      <p>בהצטרפות לקבוצת הווטסאפ מספר הטלפון והשם שבחשבון הווטסאפ שלכם גלויים למנהלי הקבוצה. בפנייה לקבלת הצעה אנו אוספים פרטי קשר בסיסיים, ובהזמנה בפועל גם פרטי דרכון ואמצעי תשלום ככל שנדרש.</p>
+      <h3>פיקסל של Meta ועוגיות</h3>
+      <p>באתר מותקן פיקסל של Meta (Facebook ו-Instagram) שאוסף מידע טכני על הביקור, כגון סוג המכשיר והלחיצה על כפתור ההצטרפות, לצורך מדידת הקמפיינים והצגת פרסומות רלוונטיות. ניתן לנהל את העדפות הפרסום בהגדרות החשבון ב-Facebook או ב-Instagram. האתר משתמש גם בעוגיות (Cookies) לתפעולו התקין.</p>
+      <h3>העברת מידע לספקים</h3>
+      <p>לצורך מתן השירות חלק מהמידע מועבר לספקים המעורבים בהזמנה, כגון חברות תעופה, בתי מלון, ספקי קרוזים, מערכות הזמנה וחברות ביטוח נסיעות. חלק מהספקים פועלים מחוץ לישראל, ולכן המידע עשוי להישמר מחוץ לישראל.</p>
+      <h3>שימוש במידע</h3>
+      <p>המידע משמש למתן השירות, להכנת הצעות מחיר ולשליחת דילים לחברי הקבוצה. איננו מוכרים מידע אישי לצד שלישי.</p>
+      <h3>הזכויות שלכם</h3>
+      <p>לפי סעיפים 13 ו-14 לחוק הגנת הפרטיות, התשמ״א-1981, ניתן לעיין במידע המוחזק עליכם ולבקש לתקנו או למחוק אותו. לפנייה: <a href="tel:+972528786250" class="ltr">052-878-6250</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- נגישות -->
+<div class="modal" id="modal-a11y" role="dialog" aria-modal="true" aria-labelledby="t-a11y">
+  <div class="modal__box">
+    <div class="modal__head"><h2 id="t-a11y">הצהרת נגישות</h2><button class="modal__close" type="button" aria-label="סגירה">×</button></div>
+    <div class="modal__body">
+      <h3>כלי נגישות</h3>
+      <div class="tools">
+        <button type="button" data-a11y="up">א+ הגדלת טקסט</button>
+        <button type="button" data-a11y="down">א- הקטנת טקסט</button>
+        <button type="button" data-a11y="contrast">ניגודיות גבוהה</button>
+        <button type="button" data-a11y="reset">איפוס</button>
+      </div>
+      <h3>התאמות באתר</h3>
+      <ul>
+        <li>האתר בנוי מימין לשמאל ומותאם לטלפון ולמחשב.</li>
+        <li>ניתן לנווט באתר באמצעות המקלדת.</li>
+        <li>לתמונות יש טקסט חלופי.</li>
+        <li>האתר מכבד את הגדרת הפחתת התנועה במכשיר.</li>
+      </ul>
+      <h3>מעמד העסק</h3>
+      <p>Maykon Tours הוא עסק קטן במחזור עסקאותיו, ובהתאם חל עליו הפטור שבתקנה 35 לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע״ג-2013. לעסק אין קבלת קהל, והשירות ניתן בטלפון ובאופן מקוון בלבד.</p>
+      <h3>פנייה בנושא נגישות</h3>
+      <p>לכל בקשה או קושי ניתן לפנות לאלדר מייקון בטלפון או בוואטסאפ: <a href="tel:+972528786250" class="ltr">052-878-6250</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // קישור לקבוצת הווטסאפ
+  const WHATSAPP_GROUP_URL = 'https://did.li/Deals-Group-18';
+  // השהיה קצרה כדי שהפיקסל יספיק לשלוח את האירוע
+  const REDIRECT_DELAY_MS = 400;
+
+  let busy = false;
+  function join(source) {
+    if (busy) return;
+    busy = true;
+    if (typeof window.fbq === 'function') {
+      fbq('track', 'Lead', { content_name: 'WhatsApp Silent Group' });
+      fbq('trackCustom', 'JoinWhatsAppGroup', { button_location: source });
+      setTimeout(function () { location.href = WHATSAPP_GROUP_URL; }, REDIRECT_DELAY_MS);
+    } else {
+      location.href = WHATSAPP_GROUP_URL;
+    }
+    setTimeout(function () { busy = false; }, 3000);
+  }
+  document.querySelectorAll('[data-join]').forEach(function (a) {
+    a.href = WHATSAPP_GROUP_URL;
+    a.addEventListener('click', function (e) { e.preventDefault(); join(a.dataset.join); });
+  });
+
+  // כפתור דביק: מופיע כשהכפתור הראשי לא נראה במסך
+  const sticky = document.getElementById('sticky');
+  const stickyLink = sticky.querySelector('a');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      const show = en[0].intersectionRatio < 0.6;
+      sticky.classList.toggle('show', show);
+      sticky.setAttribute('aria-hidden', show ? 'false' : 'true');
+      stickyLink.tabIndex = show ? 0 : -1;
+    }, { threshold: [0, 0.6, 1] }).observe(document.getElementById('mainCta'));
+
+    const reveal = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('show'); reveal.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.deal').forEach(function (d, i) {
+      d.style.transitionDelay = (i % 2) * 80 + 'ms';
+      reveal.observe(d);
+    });
+  } else {
+    document.querySelectorAll('.deal').forEach(function (d) { d.classList.add('show'); });
+  }
+
+  // חלונות
+  let lastFocus = null;
+  function openModal(id) {
+    const m = document.getElementById('modal-' + id);
+    lastFocus = document.activeElement;
+    m.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    m.querySelector('.modal__close').focus();
+  }
+  function closeModal(m) {
+    m.classList.remove('open');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-modal]').forEach(function (b) {
+    b.addEventListener('click', function () { openModal(b.dataset.modal); });
+  });
+  document.querySelectorAll('.modal').forEach(function (m) {
+    m.querySelector('.modal__close').addEventListener('click', function () { closeModal(m); });
+    m.addEventListener('click', function (e) { if (e.target === m) closeModal(m); });
+  });
+  document.addEventListener('keydown', function (e) {
+    const m = document.querySelector('.modal.open');
+    if (e.key === 'Escape' && m) closeModal(m);
+  });
+
+  // נגישות
+  let scale = 1;
+  document.querySelectorAll('[data-a11y]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      const a = b.dataset.a11y;
+      if (a === 'up') scale = Math.min(scale + 0.1, 1.5);
+      if (a === 'down') scale = Math.max(scale - 0.1, 0.9);
+      if (a === 'contrast') document.body.classList.toggle('hc');
+      if (a === 'reset') { scale = 1; document.body.classList.remove('hc'); }
+      document.documentElement.style.setProperty('--scale', scale);
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
